@@ -1,0 +1,18 @@
+name: Echo Hola Mundo
+
+on:
+  push:
+    branches:
+      - main # Reemplaza con el nombre de tu rama si no es main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Echo Hola Mundo
+        run: echo "Hola Mundo"
+
