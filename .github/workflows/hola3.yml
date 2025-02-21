@@ -1,0 +1,21 @@
+name: Echo Hola Nombre 3
+
+on:
+  workflow_dispatch:
+    inputs:
+      nombre:
+        description: "Ingresa tu nombre"
+        required: true
+        default: "Mundo"
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Echo Hola Nombre
+        run: echo "Hola..el nombre ingresado es ${{ github.event.inputs.nombre }}"
+
